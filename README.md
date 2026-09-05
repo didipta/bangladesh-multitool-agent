@@ -6,6 +6,15 @@ The project combines **LangChain, Google Gemini, SQLite, SQL, Tavily Web Search,
 
 ---
 
+## 🌐 Live Demo
+
+🚀 **Try the Bangladesh Multi-Tool AI Agent online:**
+
+**Live Application:** https://bangladesh-multitool-agent.onrender.com/
+
+The deployed application provides access to the Bangladesh-focused AI agent without requiring a local installation. Users can ask questions about hospitals, educational institutions, restaurants, and general/current information.
+
+
 ## ✨ Features
 
 - 🤖 AI-powered conversational interface
