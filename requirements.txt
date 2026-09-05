@@ -1,0 +1,9 @@
+langchain
+langchain-core
+langchain-google-genai
+langchain-tavily
+python-dotenv
+pandas
+datasets
+pydantic
+streamlit
