@@ -92,9 +92,54 @@ code, pre, .stCode {
     font-family: 'JetBrains Mono', monospace !important;
 }
 
-/* Hide Streamlit Header/Footer Clutter while preserving layout */
-#MainMenu, footer, header {
+/* Hide Streamlit clutter, but NEVER hide the native sidebar controls */
+#MainMenu,
+footer {
     visibility: hidden;
+}
+
+/* Keep Streamlit header available for the native sidebar expand/collapse control.
+   The header itself stays visually unobtrusive. */
+header {
+    visibility: visible !important;
+    background: transparent !important;
+    height: 0 !important;
+}
+
+/* ============================================================
+   NATIVE SIDEBAR OPEN / CLOSE CONTROLS
+   Do not replace these with custom buttons. Streamlit owns the
+   sidebar state, so these controls remain reliable across reruns.
+   ============================================================ */
+
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarExpandButton"],
+[data-testid="stSidebarCollapsedControl"],
+button[aria-label*="Collapse sidebar"],
+button[aria-label*="Expand sidebar"] {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+/* Make the collapse button independent from sidebar content styling */
+[data-testid="stSidebarCollapseButton"] button,
+[data-testid="stSidebarExpandButton"] button,
+[data-testid="stSidebarCollapsedControl"] button {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Do not let the custom sidebar button rules affect Streamlit's
+   native open/close controls */
+[data-testid="stSidebarCollapseButton"] *,
+[data-testid="stSidebarExpandButton"] *,
+[data-testid="stSidebarCollapsedControl"] * {
+    visibility: visible !important;
 }
 
 /* Container Adjustments */
